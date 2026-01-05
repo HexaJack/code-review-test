@@ -8,25 +8,25 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 text-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-8">
-            <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-white flex items-center justify-center text-6xl shadow-2xl">
+          <div className="mb-8 animate-fade-in">
+            <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-white flex items-center justify-center text-6xl shadow-2xl animate-bounce">
               👨‍💻
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in-up animation-delay-200">
             CodeMaster
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
+          <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up animation-delay-400">
             코딩의 즐거움을 전파하는 개발자
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="#videos" className="text-lg px-8 py-3">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
+            <Button href="#videos" className="text-lg px-8 py-3 transition-transform hover:scale-105">
               인기 영상 보기
             </Button>
             <Button
               href="https://youtube.com"
               variant="secondary"
-              className="text-lg px-8 py-3"
+              className="text-lg px-8 py-3 transition-transform hover:scale-105"
             >
               구독하기
             </Button>
@@ -37,11 +37,11 @@ const HomePage = () => {
       {/* About Section */}
       <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">
             채널 소개
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
+            <div className="animate-fade-in-left">
               <p className="text-lg mb-4 leading-relaxed">
                 안녕하세요! CodeMaster입니다. 💙
               </p>
@@ -53,7 +53,7 @@ const HomePage = () => {
                 함께 성장하는 개발자 커뮤니티를 만들어가고 싶습니다!
               </p>
             </div>
-            <div className="text-6xl text-center">
+            <div className="text-6xl text-center animate-fade-in-right">
               🚀
             </div>
           </div>
@@ -63,25 +63,31 @@ const HomePage = () => {
       {/* Stats Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">
             채널 통계
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <StatCard
-              icon="👥"
-              value="50만+"
-              label="구독자"
-            />
-            <StatCard
-              icon="📺"
-              value="500+"
-              label="업로드 영상"
-            />
-            <StatCard
-              icon="👁️"
-              value="1억+"
-              label="총 조회수"
-            />
+            <div className="animate-fade-in-up animation-delay-100">
+              <StatCard
+                icon="👥"
+                value="50만+"
+                label="구독자"
+              />
+            </div>
+            <div className="animate-fade-in-up animation-delay-200">
+              <StatCard
+                icon="📺"
+                value="500+"
+                label="업로드 영상"
+              />
+            </div>
+            <div className="animate-fade-in-up animation-delay-300">
+              <StatCard
+                icon="👁️"
+                value="1억+"
+                label="총 조회수"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -89,52 +95,64 @@ const HomePage = () => {
       {/* Videos Section */}
       <section id="videos" className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">
             인기 영상
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <VideoCard
-              title="Next.js 14 완벽 가이드 - 처음부터 배포까지"
-              thumbnail="https://via.placeholder.com/400x225/3b82f6/ffffff?text=Next.js+14"
-              views="120만"
-              duration="45:30"
-              link="https://youtube.com"
-            />
-            <VideoCard
-              title="TypeScript로 타입 안전한 코드 작성하기"
-              thumbnail="https://via.placeholder.com/400x225/8b5cf6/ffffff?text=TypeScript"
-              views="85만"
-              duration="32:15"
-              link="https://youtube.com"
-            />
-            <VideoCard
-              title="Tailwind CSS 실전 활용법 총정리"
-              thumbnail="https://via.placeholder.com/400x225/ec4899/ffffff?text=Tailwind+CSS"
-              views="95만"
-              duration="28:45"
-              link="https://youtube.com"
-            />
-            <VideoCard
-              title="React 성능 최적화 완벽 가이드"
-              thumbnail="https://via.placeholder.com/400x225/06b6d4/ffffff?text=React+Optimization"
-              views="110만"
-              duration="38:20"
-              link="https://youtube.com"
-            />
-            <VideoCard
-              title="알고리즘 문제 해결 전략 10가지"
-              thumbnail="https://via.placeholder.com/400x225/10b981/ffffff?text=Algorithm"
-              views="75만"
-              duration="52:10"
-              link="https://youtube.com"
-            />
-            <VideoCard
-              title="개발자 취업 포트폴리오 만들기"
-              thumbnail="https://via.placeholder.com/400x225/f59e0b/ffffff?text=Portfolio"
-              views="130만"
-              duration="41:05"
-              link="https://youtube.com"
-            />
+            <div className="transition-transform hover:scale-105 animate-fade-in-up animation-delay-100">
+              <VideoCard
+                title="Next.js 14 완벽 가이드 - 처음부터 배포까지"
+                thumbnail="https://via.placeholder.com/400x225/3b82f6/ffffff?text=Next.js+14"
+                views="120만"
+                duration="45:30"
+                link="https://youtube.com"
+              />
+            </div>
+            <div className="transition-transform hover:scale-105 animate-fade-in-up animation-delay-200">
+              <VideoCard
+                title="TypeScript로 타입 안전한 코드 작성하기"
+                thumbnail="https://via.placeholder.com/400x225/8b5cf6/ffffff?text=TypeScript"
+                views="85만"
+                duration="32:15"
+                link="https://youtube.com"
+              />
+            </div>
+            <div className="transition-transform hover:scale-105 animate-fade-in-up animation-delay-300">
+              <VideoCard
+                title="Tailwind CSS 실전 활용법 총정리"
+                thumbnail="https://via.placeholder.com/400x225/ec4899/ffffff?text=Tailwind+CSS"
+                views="95만"
+                duration="28:45"
+                link="https://youtube.com"
+              />
+            </div>
+            <div className="transition-transform hover:scale-105 animate-fade-in-up animation-delay-400">
+              <VideoCard
+                title="React 성능 최적화 완벽 가이드"
+                thumbnail="https://via.placeholder.com/400x225/06b6d4/ffffff?text=React+Optimization"
+                views="110만"
+                duration="38:20"
+                link="https://youtube.com"
+              />
+            </div>
+            <div className="transition-transform hover:scale-105 animate-fade-in-up animation-delay-500">
+              <VideoCard
+                title="알고리즘 문제 해결 전략 10가지"
+                thumbnail="https://via.placeholder.com/400x225/10b981/ffffff?text=Algorithm"
+                views="75만"
+                duration="52:10"
+                link="https://youtube.com"
+              />
+            </div>
+            <div className="transition-transform hover:scale-105 animate-fade-in-up animation-delay-600">
+              <VideoCard
+                title="개발자 취업 포트폴리오 만들기"
+                thumbnail="https://via.placeholder.com/400x225/f59e0b/ffffff?text=Portfolio"
+                views="130만"
+                duration="41:05"
+                link="https://youtube.com"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -142,24 +160,24 @@ const HomePage = () => {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
             함께 성장하는 개발자가 되어요!
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl mb-8 opacity-90 animate-fade-in-up animation-delay-200">
             매주 새로운 코딩 콘텐츠가 업로드됩니다.
             구독하고 알림 설정하면 놓치지 않아요!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
             <Button
               href="https://youtube.com"
-              className="text-lg px-8 py-3 bg-red-600 hover:bg-red-700"
+              className="text-lg px-8 py-3 bg-red-600 hover:bg-red-700 transition-transform hover:scale-105 animate-pulse"
             >
               🔔 유튜브 구독하기
             </Button>
             <Button
               href="https://github.com"
               variant="secondary"
-              className="text-lg px-8 py-3"
+              className="text-lg px-8 py-3 transition-transform hover:scale-105"
             >
               💻 GitHub 팔로우
             </Button>

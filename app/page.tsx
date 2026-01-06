@@ -1,6 +1,67 @@
 import Button from '@/components/Button';
 import VideoCard from '@/components/VideoCard';
 import StatCard from '@/components/StatCard';
+import FAQAccordion from '@/components/FAQAccordion';
+import NewsletterForm from '@/components/NewsletterForm';
+import ScheduleCard from '@/components/ScheduleCard';
+import TechBadge from '@/components/TechBadge';
+
+const faqItems = [
+  {
+    question: "코딩을 처음 시작하는데 어떤 언어부터 배워야 하나요?",
+    answer: "웹 개발에 관심이 있다면 HTML, CSS, JavaScript를 추천드립니다. 프로그래밍 기초를 탄탄히 하고 싶다면 Python도 좋은 선택입니다. 저희 채널에서 각 언어의 입문 강의를 확인해보세요!"
+  },
+  {
+    question: "영상에서 사용하는 개발 환경은 무엇인가요?",
+    answer: "주로 VS Code를 사용하고 있습니다. 테마는 One Dark Pro, 폰트는 Fira Code를 사용해요. 상세한 개발 환경 셋업 영상도 채널에서 확인하실 수 있습니다."
+  },
+  {
+    question: "질문이 있으면 어디에 남기면 되나요?",
+    answer: "영상 댓글이나 커뮤니티 탭에 질문을 남겨주시면 최대한 답변드리고 있습니다. 자주 묻는 질문은 별도 영상으로 다루기도 해요!"
+  },
+  {
+    question: "협업 및 비즈니스 문의는 어떻게 하나요?",
+    answer: "채널 정보의 비즈니스 문의 이메일로 연락 주시면 됩니다. 강의, 세미나, 기술 컨설팅 등 다양한 협업을 환영합니다."
+  }
+];
+
+const scheduleItems = [
+  {
+    day: "월요일",
+    time: "오후 6시",
+    content: "웹 개발 기초 시리즈",
+    icon: "📚"
+  },
+  {
+    day: "수요일",
+    time: "오후 7시",
+    content: "알고리즘 문제 풀이",
+    icon: "🧩"
+  },
+  {
+    day: "금요일",
+    time: "오후 6시",
+    content: "최신 프레임워크 튜토리얼",
+    icon: "🚀"
+  },
+  {
+    day: "토요일",
+    time: "오후 2시",
+    content: "라이브 코딩 & Q&A",
+    icon: "🎬"
+  }
+];
+
+const techItems = [
+  { name: "React", color: "bg-cyan-500", icon: "⚛️" },
+  { name: "Next.js", color: "bg-gray-800", icon: "▲" },
+  { name: "TypeScript", color: "bg-blue-600", icon: "📘" },
+  { name: "Node.js", color: "bg-green-600", icon: "🟢" },
+  { name: "Python", color: "bg-yellow-500", icon: "🐍" },
+  { name: "Tailwind", color: "bg-teal-500", icon: "🎨" },
+  { name: "Docker", color: "bg-blue-500", icon: "🐳" },
+  { name: "AWS", color: "bg-orange-500", icon: "☁️" }
+];
 
 const HomePage = () => {
   return (
@@ -60,8 +121,21 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Tech Stack Section */}
       <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">
+            다루는 기술 스택
+          </h2>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-12">
+            채널에서 배울 수 있는 다양한 기술들
+          </p>
+          <TechBadge items={techItems} />
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">
             채널 통계
@@ -83,6 +157,19 @@ const HomePage = () => {
               label="총 조회수"
             />
           </div>
+        </div>
+      </section>
+
+      {/* Schedule Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">
+            업로드 스케줄
+          </h2>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-12">
+            매주 정해진 시간에 새로운 콘텐츠가 업로드됩니다
+          </p>
+          <ScheduleCard items={scheduleItems} />
         </div>
       </section>
 
@@ -136,6 +223,26 @@ const HomePage = () => {
               link="https://youtube.com"
             />
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">
+            자주 묻는 질문
+          </h2>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-12">
+            궁금한 점이 있으시면 확인해보세요
+          </p>
+          <FAQAccordion items={faqItems} />
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-4xl mx-auto">
+          <NewsletterForm />
         </div>
       </section>
 
